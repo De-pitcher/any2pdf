@@ -13,6 +13,8 @@ const (
 	Word
 	Excel
 	PowerPoint
+	OpenDocument
+	RichText
 	Image
 	HTML
 )
@@ -36,6 +38,10 @@ func (ft FileType) String() string {
 		return "Excel"
 	case PowerPoint:
 		return "PowerPoint"
+	case OpenDocument:
+		return "OpenDocument"
+	case RichText:
+		return "RichText"
 	case Image:
 		return "Image"
 	case HTML:
@@ -71,6 +77,14 @@ var ExtensionMap = map[string]FileType{
 	// Microsoft PowerPoint formats
 	"ppt":  PowerPoint,
 	"pptx": PowerPoint,
+	
+	// OpenDocument formats
+	"odt": OpenDocument, // Writer (word processing)
+	"ods": OpenDocument, // Calc (spreadsheet)
+	"odp": OpenDocument, // Impress (presentation)
+	
+	// Rich Text Format
+	"rtf": RichText,
 	
 	// Image formats
 	"jpg":  Image,

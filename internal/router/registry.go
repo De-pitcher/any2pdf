@@ -37,6 +37,8 @@ func (r *ConverterRegistry) registerDefaultConverters() {
 	r.Register(detector.Word, libreOfficeConverter)
 	r.Register(detector.Excel, libreOfficeConverter)
 	r.Register(detector.PowerPoint, libreOfficeConverter)
+	r.Register(detector.OpenDocument, libreOfficeConverter)
+	r.Register(detector.RichText, libreOfficeConverter)
 	
 	// Register img2pdf for images
 	imageConverter := converter.NewImageConverter()

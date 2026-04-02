@@ -24,10 +24,13 @@ func NewConverterRegistry() *ConverterRegistry {
 
 // registerDefaultConverters registers all built-in converters
 func (r *ConverterRegistry) registerDefaultConverters() {
-	// Register Pandoc for text and markdown
+	// Register Pandoc for text and markdown formats
 	pandocConverter := converter.NewPandocConverter()
 	r.Register(detector.Text, pandocConverter)
 	r.Register(detector.Markdown, pandocConverter)
+	r.Register(detector.ReStructuredText, pandocConverter)
+	r.Register(detector.OrgMode, pandocConverter)
+	r.Register(detector.Textile, pandocConverter)
 	
 	// Register LibreOffice for Office documents
 	libreOfficeConverter := converter.NewLibreOfficeConverter()

@@ -7,6 +7,9 @@ const (
 	Unknown FileType = iota
 	Text
 	Markdown
+	ReStructuredText
+	OrgMode
+	Textile
 	Word
 	Excel
 	PowerPoint
@@ -21,6 +24,12 @@ func (ft FileType) String() string {
 		return "Text"
 	case Markdown:
 		return "Markdown"
+	case ReStructuredText:
+		return "ReStructuredText"
+	case OrgMode:
+		return "OrgMode"
+	case Textile:
+		return "Textile"
 	case Word:
 		return "Word"
 	case Excel:
@@ -44,6 +53,12 @@ var ExtensionMap = map[string]FileType{
 	// Markdown formats
 	"md":       Markdown,
 	"markdown": Markdown,
+	
+	// Other text markup formats
+	"rst":       ReStructuredText,
+	"org":       OrgMode,
+	"textile":   Textile,
+	"mediawiki": Markdown, // Treat as markdown variant for routing
 	
 	// Microsoft Word formats
 	"doc":  Word,

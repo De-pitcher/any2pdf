@@ -1,0 +1,11 @@
+This is a sample text file for testing text to PDF conversion.
+
+It contains multiple lines and paragraphs to ensure proper formatting.
+
+The converter should handle:
+- Plain text
+- Line breaks
+- Special characters: !@#$%^&*()
+- Unicode: こんにちは 你好 🎉
+
+End of sample file.

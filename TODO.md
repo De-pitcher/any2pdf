@@ -3,7 +3,7 @@
 ## Phase 1: Project Setup
 - [x] Create project structure
 - [x] Write architecture documentation
-- [ ] Initialize Go module: `go mod init github.com/yourusername/any2pdf`
+- [ ] Initialize Go module: `go mod init github.com/De-pitcher/any2pdf`
 - [ ] Create `.gitignore` for Go projects
 - [ ] Choose and add LICENSE file (MIT recommended for max adoption)
 - [ ] Set up basic CI/CD (GitHub Actions for testing/building)
@@ -122,7 +122,7 @@
 ```bash
 # 1. Initialize
 cd any2pdf
-go mod init github.com/yourusername/any2pdf
+go mod init github.com/De-pitcher/any2pdf
 go get github.com/urfave/cli/v2
 
 # 2. First working version

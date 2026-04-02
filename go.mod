@@ -1,4 +1,4 @@
-module any2pdf
+module github.com/De-pitcher/any2pdf
 
 go 1.21
 

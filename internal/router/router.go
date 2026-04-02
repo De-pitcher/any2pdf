@@ -1,9 +1,9 @@
 package router
 
 import (
-	"any2pdf/internal/converter"
-	"any2pdf/internal/detector"
-	"any2pdf/internal/utils"
+	"github.com/De-pitcher/any2pdf/internal/converter"
+	"github.com/De-pitcher/any2pdf/internal/detector"
+	"github.com/De-pitcher/any2pdf/internal/utils"
 )
 
 // Router handles routing files to appropriate converters

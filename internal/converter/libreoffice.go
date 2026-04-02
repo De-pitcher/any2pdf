@@ -1,7 +1,7 @@
 package converter
 
 import (
-	"any2pdf/internal/utils"
+	"github.com/De-pitcher/any2pdf/internal/utils"
 	"fmt"
 	"path/filepath"
 	"time"

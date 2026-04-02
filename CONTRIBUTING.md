@@ -6,7 +6,7 @@ Thank you for considering contributing to any2pdf! This document provides guidel
 
 ### Reporting Bugs
 
-1. Check if the bug has already been reported in [Issues](https://github.com/yourusername/any2pdf/issues)
+1. Check if the bug has already been reported in [Issues](https://github.com/De-pitcher/any2pdf/issues)
 2. If not, create a new issue with:
    - Clear title and description
    - Steps to reproduce
@@ -58,7 +58,7 @@ To add a new file format:
 
 1. **Fork and clone** the repository
    ```bash
-   git clone https://github.com/yourusername/any2pdf.git
+   git clone https://github.com/De-pitcher/any2pdf.git
    cd any2pdf
    ```
 

@@ -1,7 +1,7 @@
 package detector
 
 import (
-	"any2pdf/internal/utils"
+	"github.com/De-pitcher/any2pdf/internal/utils"
 )
 
 // Detector handles file type detection

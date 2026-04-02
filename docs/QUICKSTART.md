@@ -7,7 +7,7 @@ Welcome to any2pdf! This guide will help you get started quickly.
 ```bash
 # Download the latest release from GitHub
 # Or build from source:
-git clone https://github.com/yourusername/any2pdf.git
+git clone https://github.com/De-pitcher/any2pdf.git
 cd any2pdf
 make install
 ```

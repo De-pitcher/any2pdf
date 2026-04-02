@@ -160,13 +160,13 @@ registry.Register(detector.ePub, NewePubConverter())
 - [x] Project structure created
 - [x] Core modules implemented
 - [x] Tests scaffolded
-- [ ] Initialize Go module: `go mod init github.com/yourusername/any2pdf`
+- [ ] Initialize Go module: `go mod init github.com/De-pitcher/any2pdf`
 - [ ] Install dependencies: `go mod download`
 
 ### Phase 2: Build & Test
 ```bash
-# Initialize module (update with your GitHub username)
-go mod init github.com/yourusername/any2pdf
+# Initialize module
+go mod init github.com/De-pitcher/any2pdf
 go mod tidy
 
 # Run tests
@@ -279,7 +279,7 @@ make install        # Install to $GOPATH/bin
 make check-deps     # Verify external tools installed
 
 # First time setup
-go mod init github.com/YOURNAME/any2pdf
+go mod init github.com/De-pitcher/any2pdf
 go mod tidy
 make build
 ```

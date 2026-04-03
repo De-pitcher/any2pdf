@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Media CSS Test</title>
+    <style>
+        /* Screen styles */
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        h1 {
+            color: #2196f3;
+        }
+        
+        .screen-only {
+            background-color: #ffeb3b;
+            padding: 15px;
+            border: 2px solid #fbc02d;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .screen-only::before {
+            content: "⚠️ SCREEN ONLY: ";
+            font-weight: bold;
+        }
+        
+        .print-only {
+            display: none;
+        }
+        
+        .content {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        a {
+            color: #2196f3;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .navigation {
+            background: #333;
+            color: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding: 20px;
+            background: #333;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+        }
+        
+        /* Print-specific styles */
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+                margin: 0;
+            }
+            
+            h1 {
+                color: #000;
+                page-break-after: avoid;
+            }
+            
+            h2, h3 {
+                page-break-after: avoid;
+                page-break-inside: avoid;
+            }
+            
+            .screen-only {
+                display: none !important;
+            }
+            
+            .print-only {
+                display: block;
+                background-color: #e8f5e9;
+                border: 2px solid #4caf50;
+                padding: 15px;
+                margin: 20px 0;
+                border-radius: 5px;
+            }
+            
+            .print-only::before {
+                content: "✓ PRINT VERSION: ";
+                font-weight: bold;
+                color: #4caf50;
+            }
+            
+            .navigation {
+                display: none;
+            }
+            
+            .footer {
+                page-break-inside: avoid;
+                background: white;
+                color: black;
+                border-top: 2px solid #000;
+                border-radius: 0;
+                margin-top: 30px;
+                padding-top: 20px;
+            }
+            
+            .content {
+                box-shadow: none;
+                padding: 0;
+            }
+            
+            a::after {
+                content: " (" attr(href) ")";
+                font-size: 0.8em;
+                font-style: italic;
+                color: #666;
+            }
+            
+            img {
+                max-width: 100%;
+                page-break-inside: avoid;
+            }
+            
+            table {
+                page-break-inside: avoid;
+            }
+            
+            .page-break {
+                page-break-before: always;
+            }
+            
+            /* Optimize for printing */
+            * {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navigation">
+        <strong>Navigation (Hidden in Print)</strong> | 
+        <a href="#home">Home</a> | 
+        <a href="#about">About</a> | 
+        <a href="#contact">Contact</a>
+    </nav>
+    
+    <div class="content">
+        <h1>@media print CSS Test Page</h1>
+        
+        <div class="screen-only">
+            This yellow box should ONLY appear on screen, NOT in the PDF!
+        </div>
+        
+        <div class="print-only">
+            This green box should ONLY appear in the PDF, NOT on screen!
+        </div>
+        
+        <h2>Purpose</h2>
+        <p>This page tests the HTML to PDF converter's ability to respect <code>@media print</code> CSS rules. 
+        The print version should have different styling than what you see in a web browser.</p>
+        
+        <h2>What's Different in Print?</h2>
+        <ul>
+            <li>Navigation bar is hidden</li>
+            <li>Yellow "screen only" box is hidden</li>
+            <li>Green "print only" box appears</li>
+            <li>Links show their URLs in parentheses</li>
+            <li>Colors are optimized for printing</li>
+            <li>Shadows and backgrounds are removed or simplified</li>
+            <li>Page breaks are controlled for better layout</li>
+        </ul>
+        
+        <h2>Example Link</h2>
+        <p>Visit <a href="https://github.com/De-pitcher/any2pdf">the any2pdf repository</a> for more information. 
+        In the PDF, the URL should appear after the link text.</p>
+        
+        <h2>Content Preservation</h2>
+        <p>While styling changes for print, all essential content should be preserved. This includes:</p>
+        <ul>
+            <li>All text content</li>
+            <li>Proper heading hierarchy</li>
+            <li>List formatting</li>
+            <li>Paragraph spacing</li>
+            <li>Table data (if present)</li>
+        </ul>
+        
+        <div class="page-break"></div>
+        
+        <h2>Page 2 Content</h2>
+        <p>The content above this heading forces a page break in print mode. This tests the converter's 
+        ability to handle CSS page-break properties.</p>
+        
+        <h3>Print Optimization Features</h3>
+        <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+            <thead>
+                <tr style="background: #f0f0f0;">
+                    <th style="padding: 10px; border: 1px solid #ddd;">Feature</th>
+                    <th style="padding: 10px; border: 1px solid #ddd;">Screen</th>
+                    <th style="padding: 10px; border: 1px solid #ddd;">Print</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Background Colors</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Visible</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Optimized</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Navigation</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Shown</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Hidden</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Links</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Colored</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">URLs shown</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Page Breaks</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">N/A</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Controlled</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>Success Criteria</h3>
+        <p>If the PDF output shows:</p>
+        <ol>
+            <li>The green "PRINT VERSION" box (not the yellow screen one)</li>
+            <li>No navigation bar at the top</li>
+            <li>URLs after link text</li>
+            <li>Proper page break before "Page 2 Content"</li>
+            <li>Clean, print-friendly formatting</li>
+        </ol>
+        <p>...then the @media print CSS support is working correctly!</p>
+    </div>
+    
+    <footer class="footer">
+        <p>Footer content - Styled differently in print mode</p>
+        <p>Generated by any2pdf HTML converter test suite</p>
+    </footer>
+</body>
+</html>

@@ -96,6 +96,9 @@ var ExtensionMap = map[string]FileType{
 	"tif":  Image,
 	
 	// HTML formats
-	"html": HTML,
-	"htm":  HTML,
+	"html":  HTML,
+	"htm":   HTML,
+	"xhtml": HTML,
+	"xml":   HTML, // XML with stylesheets treated as HTML
+	"mhtml": HTML, // MIME HTML
 }

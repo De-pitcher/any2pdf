@@ -1,5 +1,7 @@
 package converter
 
+import "fmt"
+
 // Quality represents the quality level for PDF conversion
 type Quality int
 
@@ -37,6 +39,7 @@ func ParseQuality(s string) Quality {
 type Options struct {
 	Quality Quality
 	Quiet   bool
+	Extra   map[string]interface{} // Extra converter-specific options (e.g., HTML page size, margins)
 }
 
 // Converter is the interface that all converters must implement
@@ -49,4 +52,14 @@ type Converter interface {
 
 	// Name returns the name of the converter
 	Name() string
+}
+
+// ConverterNotFoundError indicates that a required converter tool is not installed
+type ConverterNotFoundError struct {
+	Converter string
+	Message   string
+}
+
+func (e *ConverterNotFoundError) Error() string {
+	return fmt.Sprintf("converter not found: %s\n%s", e.Converter, e.Message)
 }
